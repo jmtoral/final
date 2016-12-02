@@ -1,0 +1,50 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,500,400,300,200,100,400italic0&subset=latin,greek,latin-ext' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
+    <title>{{ title | default:"Social Investment" }}</title>
+
+    {% block header_ex %}{% endblock %}
+
+</head>
+
+<body>
+
+
+
+  <nav class="navbar navbar-inverse" id="navbar">
+    <div class="col-md-10 col-md-offset-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="http://localhost:8000/maps/map/">Home</a></li>
+        <li ><a href="http://localhost:8000/home/display_table/">Data by State</a></li>
+        <li><a href="/maps">References</a></li>
+        <li><a href="#code">Contact</a></li>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+
+
+<div class="col-md-10 col-md-offset-1 text-left">
+
+  <h1>{{ title | default:"Social Investment" }}</h1>
+
+  <div id="content">
+    {% block content %}{% endblock %}
+  </div>
+
+</div>
+
+</body>
+</html>

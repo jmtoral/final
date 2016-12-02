@@ -1,0 +1,40 @@
+{% extends "welcome.html" %}
+
+{% block content %}
+
+<p><b><mark><font size = "4">Does the social investment through the 3x1 program has any effect on the crime rate?</font><mark></b> </p>
+
+<p>
+The Program 3x1 supports Mexicans living abroad to develop social infrastructure and productive projects in their hometown communities.
+For each dollar invested by the immigrant, the federal government, the state and counties will invest other 3 dollars.
+</p>
+
+<p><b><mark><font size = "4">What is Program 3x1?</font><mark> </b></p>
+
+<p>
+The Program 3x1 supports Mexicans living abroad to develop social infrastructure and productive projects in their hometown communities.
+For each dollar invested by the immigrant, the federal government, the state and counties will invest other 3 dollars.
+</p>
+
+
+<p><b><mark><font size = "4">Why crime?</font> <mark></b> </p>
+
+<p>
+  Our hypothesis is that there should be a positive effect on the reduction of crime due to the productive projects financed by 3x1.
+</p>
+
+
+  <form action="{{ form_action }}"
+        method="{{ form_method }}">
+    {% if form_method == "post" %}
+      {% csrf_token %}
+    {% endif %}<!-- some text -->
+  {{ form.state }}
+  <input type="submit" value="Submit">
+</form>
+  <p>
+  <center> <img src='{{ pic_source }}' width=40% /> </center>
+
+  {{ html_table | safe }}
+
+{% endblock %}

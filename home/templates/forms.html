@@ -1,0 +1,29 @@
+{% extends "welcome.html" %}
+
+{% block content %}
+
+{% if state %}
+    See how {{ state }} is doing!!! </br>
+{% endif %}
+
+<form action="{{ form_action }}"
+      method="{{ form_method }}">
+  {% if form_method == "post" %}
+    {% csrf_token %}
+  {% endif %}
+
+  {{ form.state }}
+  <input type="submit" value="Submit">
+</form>
+
+{% lorem 3 p %} <!-- some text -->
+{{ form.state }}
+<p>
+  <p>
+<center> <img src='{{ pic_source }}' width=40% /> </center>
+
+{{ html_table | safe }}
+<p>
+
+
+{% endblock %}
