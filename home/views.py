@@ -9,6 +9,9 @@ from os.path import join
 from django.conf import settings
 
 import numpy as np, pandas as pd
+
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 from .forms import InputForm, StatesForm
@@ -190,6 +193,7 @@ def plot(request, c = "Aguascalientes"):
    except ValueError: raise Http404("No such color")
 
    figfile.seek(0) # rewind to beginning of file
+  
    return HttpResponse(figfile.read(), content_type="image/png")
 
 # Tampoco supe si queriamos lo que sigue
