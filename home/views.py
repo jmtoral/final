@@ -73,6 +73,10 @@ def display_table(request):
               }
 
     return render(request, 'view_table.html', params)
+
+
+
+
 from django.views.generic import FormView
 class FormClass(FormView):
 
@@ -156,6 +160,8 @@ def pic(request, c = None):
    figfile.seek(0) # rewind to beginning of file
    return HttpResponse(figfile.read(), content_type="image/png")
 
+
+
 # Esto que nos da?
 from .forms import StatesForm
 def display_pic(request, c = 'r'):
@@ -171,6 +177,8 @@ def display_pic(request, c = 'r'):
     return render(request, 'view_table.html', params)
 
 
+
+
 # Plot of crime vs projects granted by state
 def plot(request, c = "Aguascalientes"):
 
@@ -181,8 +189,8 @@ def plot(request, c = "Aguascalientes"):
    df = df[df["NOM_ENT"] == c]
    if not df.size: return HttpResponse("No such state!")
 
-   ax =  ax = df.plot(kind='scatter', x='3x1 Projects Granted in 2013', y='Homicide Rate in 2013')
-   ax.set_ylabel("Homice Rate in 2013")
+   ax =  ax = df.plot(kind='scatter', x='3x1 Projects Granted in 2014', y='Homicide Rate in 2014')
+   ax.set_ylabel("Homice Rate in 2014")
 
    # write bytes instead of file.
    figfile = BytesIO()
@@ -193,8 +201,11 @@ def plot(request, c = "Aguascalientes"):
    except ValueError: raise Http404("No such color")
 
    figfile.seek(0) # rewind to beginning of file
-  
+
    return HttpResponse(figfile.read(), content_type="image/png")
+
+
+
 
 # Tampoco supe si queriamos lo que sigue
 def resp_redirect(request):
