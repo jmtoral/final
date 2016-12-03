@@ -33,7 +33,7 @@ The first challenge we went through was that we had the dataset on public goods 
 
 We overcome this by noting that each locality has a unique id made of 'state id' & 'municipality id' & 'locality id', and so we used state and municipality ids to group the localities into one municipality. This id was useful in further steps of transforming the database into a geopandas dataframe.
 
-The entire process of cleaning an merging can be seen in our file “bases_B.ipynb”. The result of this process of cleaning is the archive “mater.csv” with our data of interest.
+The entire process of cleaning an merging can be seen in our file “bases_B.ipynb”. The result of this process of cleaning is the archive “master.csv” with our data of interest.
 
 +++ Step 2
 
@@ -42,8 +42,9 @@ We use geopandas to put an interactive map in the very first page of our site. H
 
 +++ Results
 
-This app can graph "on the fly" an scatterplot of the municipalities in Mexico. This graph have, in the y-axis, the homicide rate in 2014 per 100,000 population. In addition, the app display a table with all the relevan data per state.
+This app can graph "on the fly" an scatterplot of the municipalities in Mexico. This graph have, in the y-axis, the homicide rate in 2014 per 100,000 population. In addition, the app displays a table with all the relevant data per state.
 
-When clik on the menu "Data by State" a menu will appear with the name of each Mexican State. Each submenu will contain relevant information by state.
+When click on the menu "Data by State" a menu will appear with the name of each Mexican State. Each submenu will contain relevant information by state.
 
 We did not find in this graphs any systematic evidence of relations. However, we did not use any statistical tool at the moment.
+# Final
